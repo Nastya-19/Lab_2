@@ -14,36 +14,40 @@ int main(int argc, char *argv[]) {
 	printf("Vvedite c:");
 	scanf("%lf", &c);
 	
-	if (b == 0){
-		printf("\t%.1lf*x^2 + %.1lf = 0\n", a, c);
-		k = c/a;
-		x = - sqrt(k);
-		printf("\tx = %lf\n", x);
+	if ((b == 0) && (c == 0)){
+		printf("\t%.1lfx^2 = 0\n");
+		printf("\tx = 0\n");
 	} else {
-		if (a > 0){
-			printf("Reshayem uravneniye %.1lf*x^2 + %.1lf*x + %.1lf = 0\n", a, b, c);
-			d = b * b - 4 * a * c;
-			if(d == 0){
-				x1 = -b/(2*a);
-				printf("x=%lf", x1);
-			} else {
-				if(d > 0){
-					x1 = (-b + sqrt(d))/ (2*a);
-					x2 = (-b - sqrt(d))/ (2*a);
-					printf("x1=%lf, x2=%lf\n", x1, x2);
-				} else {
-					printf("Nemaye diysnyh rozvyazkiv\n");
-				}
-			}
+		if (b == 0){
+			printf("\t%.1lf*x^2 + %.1lf = 0\n", a, c);
+			k = c/a;
+			x = - sqrt(k);
+			printf("\tx = %lf\n", x);
 		} else {
-			if(a == 0){
-				printf("\t%.0lfx + %.0lf = 0\n", b, c);
-				x = -c/b ;
-				printf("\tx = %lf\n", x);
+			if (a > 0){
+				printf("Reshayem uravneniye %.1lf*x^2 + %.1lf*x + %.1lf = 0\n", a, b, c);
+				d = b * b - 4 * a * c;
+				if(d == 0){
+					x1 = -b/(2*a);
+					printf("x=%lf", x1);
+				} else {
+					if(d > 0){
+						x1 = (-b + sqrt(d))/ (2*a);
+						x2 = (-b - sqrt(d))/ (2*a);
+						printf("x1=%lf, x2=%lf\n", x1, x2);
+					} else {
+						printf("Nemaye diysnyh rozvyazkiv\n");
+					}
+				}
+			} else {
+				if(a == 0){
+					printf("\t%.0lfx + %.0lf = 0\n", b, c);
+					x = -c/b ;
+					printf("\tx = %lf\n", x);
+				}
 			}
 		}
 	}
-	
 
 	
 	system("pause");
